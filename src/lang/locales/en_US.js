@@ -11,7 +11,7 @@ Table of Contents
 
 module.exports = {
   /* 01.General */
-  "general.copyright": "Gogo React © 2018 All Rights Reserved.",
+  "general.copyright": "Eat Tunisian © 2020 All Rights Reserved.",
 
   /* 02.User Login, Logout, Register */
   "user.login-title": "Login",
@@ -30,9 +30,9 @@ module.exports = {
   /* 03.Menu */
   "menu.app": "Home",
   "menu.dashboards": "Dashboards",
-  "menu.gogo": "Gogo",
+  "menu.recipes": "Recipes",
   "menu.start": "Start",
-  "menu.second-menu": "Second Menu",
+  "menu.places": "Places",
   "menu.second": "Second",
   "menu.ui": "UI",
   "menu.charts": "Charts",
@@ -41,7 +41,7 @@ module.exports = {
   "menu.todo": "Todo",
   "menu.search" :"Search",
   "menu.docs": "Docs",
-  "menu.blank-page": "Blank Page",
+  "menu.users": "Users",
 
  /* 04.Error Page */
  "pages.error-title": "Ooops... looks like an error occurred!",

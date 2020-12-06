@@ -4,7 +4,9 @@ import { NavLink } from "react-router-dom";
 import IntlMessages from "../../helpers/IntlMessages";
 
 const getMenuTitle = sub => {
+  console.log(sub);
   return <IntlMessages id={`menu.${sub}`} />;
+  
 };
 
 const getUrl = (path, sub, index) => {
