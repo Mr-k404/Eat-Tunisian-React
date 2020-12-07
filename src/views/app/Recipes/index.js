@@ -3,6 +3,7 @@ import { Row } from "reactstrap";
 import IntlMessages from "../../../helpers/IntlMessages";
 import { Colxx, Separator } from "../../../components/common/CustomBootstrap";
 import Breadcrumb from "../../../containers/navs/Breadcrumb";
+import ThumbnailImage from '../../../components/cards/RadialProgressCard';
 
 export default class Recipes extends Component {
     render() {
@@ -15,8 +16,9 @@ export default class Recipes extends Component {
               </Colxx>
             </Row>
             <Row>
+            
               <Colxx xxs="12" className="mb-4">
-                <p><IntlMessages id="menu.start"/></p>
+              <ThumbnailImage/>
               </Colxx>
             </Row>
           </Fragment>

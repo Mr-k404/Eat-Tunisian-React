@@ -4,7 +4,7 @@ import Rater from "react-rater";
 import "react-rater/lib/react-rater.css";
 
 const Rating = props => (
-  <Rater {...props}>
+  <Rater  {...props}>
     <Star />
   </Rater>
 );
@@ -27,10 +27,10 @@ const Star = props => {
 };
 
 Star.defaultProps = {
-  willBeActive: false,
-  isActive: false,
-  isActiveHalf: false,
-  isDisabled: false
+  willBeActive: true,
+  isActive: true,
+  isActiveHalf: true,
+  isDisabled: true
 };
 
 Star.propTypes = {

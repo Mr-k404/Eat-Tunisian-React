@@ -1,32 +1,54 @@
 import React from "react";
-import { Card, CardBody, CardTitle, CardHeader } from "reactstrap";
+import { Card, CardBody, CardTitle, CardHeader, Button, Form, Media   } from "reactstrap";
 import {CircularProgressbar} from "react-circular-progressbar";
+import Rating from "../common/Rating"
+
+
+const Data =[ 
+  {title :"Laborum  adipisicing aliquip non sunt ",
+   dic:"Occaecat nulla quis qui laborum et veniam laborum duis do aliqua laborum aute reprehenderit.",
+   img:"/assets/img/notification-thumb-3.jpg",
+  rt :4},
+
+  {title :"Laborum vniam adipisicing aliquip non unt ",
+   dic:"Occaecat nulla quis quiborum duis do aliqua laborum aute reprehenderit.",
+   img:"/assets/img/petit-gateau-thumb.jpg",
+  rt :3},
+
+  {title :"Laborum veniam adipis non sunt ",
+   dic:"Occaecat nulla quis qui laborum orum duis do aliqua laborum aute reprehenderit.",
+   img:"/assets/img/card-thumb-1.jpg",
+  rt :5}
+
+]
+ 
 
 const RadialProgressCard = ({
-  title = "title",
-  percent = 50,
-  isSortable = false
+  title = "Good Old Fashioned Pancakes",
+  disc ="A great, quick and easy recipe for Yorkshire pudding. Everybody loves 'em! ",
+  rt = 4,
 }) => {
   return (
-    <Card>
-      {isSortable && (
-        <CardHeader className="p-0 position-relative">
-          <div className="position-absolute handle card-icon">
-            <i className="simple-icon-shuffle" />
-          </div>
-        </CardHeader>
-      )}
-      <CardBody className="d-flex justify-content-between align-items-center">
-        <CardTitle className="mb-0">{title}</CardTitle>
-        <div className="progress-bar-circle">
-          <CircularProgressbar
-            strokeWidth={4}
-            value={percent}
-            text={`${percent}%`}
-          />
+    
+    Data.map(d=>{
+      return(
+      <Card>
+      <CardBody className="d-flex bd-highlight  align-items-center  ">
+      <img  width="120" height="120" className="img-thumbnail" src={d.img}></img>
+        <div className="p-3  bd-highlight ">
+        <CardTitle className="rcpC" >{d.title}</CardTitle>
+        <p >{d.dic}</p>
+          <Rating  rating={d.rt} interactive={true}/>
         </div>
+        <Form  className="action-form ml-auto  bd-highlight" >
+        <Button className="m-2 " color="primary"><i className="fas fa-folder-plus p-2"></i> Update</Button>
+        <Button color="primary"><i className="fas fa-trash p-2"></i>Delete</Button>
+        </Form>
       </CardBody>
-    </Card>
+    </Card>)
+    })
+
+    
   );
 };
 export default RadialProgressCard;

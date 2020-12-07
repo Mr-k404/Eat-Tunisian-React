@@ -70,17 +70,17 @@ class Post extends Component {
                 <CardBody>
                     <div className="d-flex flex-row mb-3">
                         <NavLink to="#">
-                            <img src={this.props.data.profilePic} alt="thumbnail" className="img-thumbnail border-0 rounded-circle list-thumbnail align-self-center xsmall" />
+                            <img src="" alt="thumbnail" className="img-thumbnail border-0 rounded-circle list-thumbnail align-self-center xsmall" />
                         </NavLink>
                         <div className="pl-3">
                             <NavLink to="#">
-                                <p className="font-weight-medium mb-0 ">{this.props.data.name}</p>
-                                <p className="text-muted mb-0 text-small">{this.props.data.date}</p>
+                                <p className="font-weight-medium mb-0 "></p>
+                                <p className="text-muted mb-0 text-small"></p>
                             </NavLink>
                         </div>
                     </div>
                     <p>
-                        {this.props.data.detail}
+                        
                     </p>
                     {this.renderContent()}
                     {this.renderLikeAndCommentCount()}
