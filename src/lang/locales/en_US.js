@@ -23,6 +23,7 @@ module.exports = {
   "user.fullname": "Full Name",
   "user.login-button": "LOGIN",
   "user.register-button": "REGISTER",
+  "user.register-button-low": "Don't have account yet Register!",
   "user.reset-password-button": "RESET",
   "user.buy": "BUY",
   "user.username": "Username",

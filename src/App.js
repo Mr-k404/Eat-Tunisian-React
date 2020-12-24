@@ -22,7 +22,12 @@ const ViewApp = React.lazy(() =>
 const ViewError = React.lazy(() =>
   import(/* webpackChunkName: "views-error" */ './views/error')
 );
-
+const Signup = React.lazy(() =>
+  import(/* webpackChunkName: "viewsSignup-Signup" */ './views/user/register')
+);
+const ViewUser = React.lazy(() =>
+  import(/* webpackChunkName: "views-user" */ './views/user')
+);
 class App extends Component {
   constructor(props) {
     super(props);
@@ -35,11 +40,13 @@ class App extends Component {
       document.body.classList.remove('rtl');
     }
   }
+  
+
 
   render() {
     const { locale } = this.props;
     const currentAppLocale = AppLocale[locale];
-
+    const login = false;
     return (
       <div className="h-100">
         <IntlProvider
@@ -50,6 +57,7 @@ class App extends Component {
             <NotificationContainer />
             {isMultiColorActive && <ColorSwitcher />}
             <Suspense fallback={<div className="loading" />}>
+            {login ? (
               <Router>
                 <Switch>
                   <Route
@@ -66,9 +74,30 @@ class App extends Component {
                     exact
                     render={props => <ViewMain {...props} />}
                   />
-                  <Redirect to="/error" />
+                  <Redirect to="/" />
+                </Switch>
+              </Router>):(
+                <Router>
+                <Switch>
+                <Route
+                    path="/user"
+                    render={props => <ViewUser {...props} />}
+                  />
+                  <Route
+                    path="/error"
+                    exact
+                    render={props => <ViewError {...props} />}
+                  />
+                  {/* <Route
+                    path="/"
+                    exact
+                    render={props => <ViewMain {...props} />}
+                  />*/}
+                  <Redirect to="/user" /> 
                 </Switch>
               </Router>
+              )}
+              
             </Suspense>
           </React.Fragment>
         </IntlProvider>
